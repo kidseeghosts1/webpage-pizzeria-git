@@ -1,0 +1,341 @@
+/* Fuentes y tipografías */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Great+Vibes&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+
+html, body{
+    line-height: 1.5;
+}
+
+/* estilos para el head (barra de navegación) */
+.header-navbar{
+    width: 100%;
+    max-width: 2900px;
+    min-width: 320px;
+    height: auto;
+    margin: 0 auto;
+    background-color: #B38F6F;
+}
+
+.navbar-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.up-navbar{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 35px 0 35px;
+    box-shadow: 0px 5px 10px -10px rgba(0,0,0,0.5);
+}
+
+.up-navbar nav ul{ /* Barra de navegación */
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.up-navbar img{ /* logo principal */
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: 2px;
+}
+
+.up-navbar nav ul a{
+    text-decoration: none;
+    font-size: 120%;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.up-navbar nav ul li{
+    padding: 10px;
+}
+
+.up-navbar nav ul li:hover{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    border-radius: 15px;
+    /* padding: 5px; */
+}
+
+.down-navbar{ /* Estilos para la parte baja de la barra de navegación */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 8px;
+}
+
+.down-navbar form input{
+    width: 500px;
+    height: 28px;
+    border: 0px solid transparent;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0px 5px 0px 0px;
+}
+
+.down-navbar form button[type="submit"]{
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: #4F6815;
+}
+
+.down-navbar form button[type="submit"] i{
+    font-size: 20px;
+}
+
+.down-navbar form button[type="submit"] i:hover{
+    cursor: pointer;
+}
+
+/* Estilos y diseños para el header */
+header{
+    width: 100%;
+    max-width: 2900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+header .titulos-carrusel{
+    width: 100%;
+    height: 4em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5em 0 5em;
+    margin: .5em 0 -1.5em 0;   
+}
+
+.titulos-carrusel h1{
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5em;
+}
+
+.titulos-carrusel h2{
+    text-transform: uppercase;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+    align-self: flex-end;
+}
+
+.container-principal{
+    width: 400%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+
+    transition: all .5s ease;
+    transform: translateX(0%);
+    /* animation: transicion 16s .5ms infinite; */
+}
+
+/* @keyframes transicion{
+    0%{transform: translateX(0%);}
+    25%{transform: translateX(-25%);}
+    50%{transform: translateX(-50%);}
+    75%{transform: translateX(-75%);}
+} */
+
+.container-principal img{
+    width: calc(100% / 4 - 2em);
+    min-height: 10vh;
+}
+
+.puntos{
+    list-style: none;
+    width: 100%;
+    margin: -3rem 0 0;
+    height: 5em;
+
+    display: flex;
+    flex-flow: flex nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.puntos .punto::before{
+    content: ".";
+    font-size: 110px;
+    width: 1em;
+    margin: 0 .5em;
+}
+
+.activo{
+    color: #75070C;
+}
+
+/* Estilos y diseño para el main y los cards */
+main{
+    padding: 10px 15px 0px 15px;
+    margin: 25px 0px 0px 0px;
+    width: 100%;
+}
+
+main .container-cards-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container-cards-menu h1{
+    text-transform: uppercase;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+}
+
+.card-producto{
+    width: 100%;
+    position: relative;
+    place-content: center;
+    margin-top: 5px;
+    height: 100px;
+}
+
+.card-producto img{
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.desc-producto{
+    position: absolute;
+    width: 100%;
+    bottom: 1.5vw;
+    text-align: center;
+}
+.card-producto .desc-producto p{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-transform: capitalize;
+    color: #ffff;
+} 
+
+.card-producto .desc-producto{
+    font-size: 35px;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: bold;
+    width: 100%;
+    margin: auto;
+    height: 100%;
+    opacity: 0;
+    top: 20px;
+    border-radius: 10px;
+    padding: 25px;
+    transition: .5s ease-in-out;
+}
+
+/* Estilos de posicionamiento de raton para el menu */
+.card-producto-efect:not(.desc-producto)::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+    border-radius: 10px;
+}
+
+/* Estilos y diseños para el footer */
+footer{
+    background-color: #000000;
+    width: 100%;
+    max-width: 2900px;
+    margin: 35px auto 0px auto;
+    padding: 40px 0;
+}
+
+footer .container-footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+footer .container-footer .left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left .inside1{
+    margin: 0px 15px;
+}
+
+.left .inside1 p{
+    color: #ffffff;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 40px;
+    text-transform: uppercase;
+    border-right: 1px solid;
+    padding: 15px;
+}
+
+.left .inside2{
+    color: #ffffff;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: smaller;
+    text-transform: capitalize;
+}
+
+.left .inside2 span{
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+footer .container-footer .right a{
+    padding-right: 20px;
+    font-size: large;
+}
+
+footer .container-footer .right a i{
+    color: #ffffff;
+}
+
+footer .container-footer .right p{
+    color: #ffffff;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: smaller;
+}
