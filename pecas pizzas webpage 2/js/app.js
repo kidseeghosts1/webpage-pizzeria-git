@@ -21,17 +21,24 @@ function mostrarSeccion(idSeleccion){
 
 }
 
+// Funcion que fija las barra de navegación al cambiar a la vista "Menu"
 function navBarEstaticas(idSeleccion) {
+
+    const barraNavegacion = document.querySelector('.header-navbar');
+    const menuOptions = document.querySelector('.menuOptions');
+    const grupoCartas = document.querySelector('.groupCards');
     
     if(idSeleccion === 'seccionMenu') {
-        const barraNavegacion = document.querySelector('.header-navbar');
-        const menuOptions = document.querySelector('.menuOptions');
 
         // Agregandole los estilos a las barras de navegación
-        barraNavegacion.style.position = "fixed";
-        menuOptions.style.position = "fixed";
-        menuOptions.style.margin = "50px 0px"
+        barraNavegacion.classList.add('fijado');
+        menuOptions.style.margin = "114px 0px";
+        grupoCartas.style.padding = "195px 0px";
+
+        return;
     }
+
+    barraNavegacion.classList.remove('fijado');
 
 }
 
