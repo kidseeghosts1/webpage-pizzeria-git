@@ -13,7 +13,25 @@ function mostrarSeccion(idSeleccion){
         document.getElementById(idSeleccion).classList.add('activa');
 
         document.querySelector('.loader').style.display = "none";
+
+        // Barras de navegación estaticas cuando se cambie de vista al "menu"
+        navBarEstaticas(idSeleccion);
     }, 1500);
+
+
+}
+
+function navBarEstaticas(idSeleccion) {
+    
+    if(idSeleccion === 'seccionMenu') {
+        const barraNavegacion = document.querySelector('.header-navbar');
+        const menuOptions = document.querySelector('.menuOptions');
+
+        // Agregandole los estilos a las barras de navegación
+        barraNavegacion.style.position = "fixed";
+        menuOptions.style.position = "fixed";
+        menuOptions.style.margin = "50px 0px"
+    }
 
 }
 
