@@ -1,0 +1,14 @@
+## Visual Studio
+.vs/
+bin/
+obj/
+
+## ASP.NET
+*.user
+*.suo
+*.cache
+*.log
+
+## Configuración sensible
+appsettings.Development.json
+appsettings.Production.json
