@@ -1,3 +1,4 @@
+CREATE DATABASE pizzeria_db;
 USE pizzeria_db;
 
 CREATE TABLE Pizza(
@@ -48,3 +49,5 @@ nombre_piola VARCHAR(50),
 descp_piola VARCHAR(250),
 precio DECIMAL(10, 2)
 )
+
+SELECT * FROM Pizza;

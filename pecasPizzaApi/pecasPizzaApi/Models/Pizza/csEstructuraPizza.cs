@@ -10,7 +10,8 @@ namespace pecasPizzaApi.Models.Pizza
     {
         public class requestPizza // Estructura para recibir datos de una nueva pizza
         {
-            public string nombrePizza { get; set; }
+            public int id_pizza { get; set; }
+            public string nombre_pizza { get; set; }
             public string descp_pizza { get; set; }
             public double precio { get; set; }
         }
@@ -19,6 +20,11 @@ namespace pecasPizzaApi.Models.Pizza
         {
             public int respuesta { get; set; }
             public string descripcion_respuesta { get; set; }
+        }
+
+        public class requestEliminarPizza
+        {
+            public int id_pizza { get; set; }
         }
     }
 }
