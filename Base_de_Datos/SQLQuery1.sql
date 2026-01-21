@@ -11,7 +11,7 @@ precio DECIMAL(10, 2)
 CREATE TABLE Pasta(	
 id_pasta INT PRIMARY KEY IDENTITY(1, 1),
 nombre_pasta VARCHAR(100),
-descp_pizza VARCHAR(250),
+descp_pasta VARCHAR(250),
 precio DECIMAL(10, 2)
 )
 
@@ -50,4 +50,5 @@ descp_piola VARCHAR(250),
 precio DECIMAL(10, 2)
 )
 
-SELECT * FROM Pizza;
+SELECT * FROM Pasta;
+
