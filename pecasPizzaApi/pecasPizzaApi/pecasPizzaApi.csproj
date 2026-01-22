@@ -155,17 +155,26 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\bebidaController.cs" />
+    <Compile Include="Controllers\canoaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\pastaController.cs" />
     <Compile Include="Controllers\pizzaController.cs" />
+    <Compile Include="Controllers\quesadillaController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Pizza\csEstructuraPasta.cs" />
+    <Compile Include="Models\Bebidas\csBebida.cs" />
+    <Compile Include="Models\Bebidas\csEstructuraBebida.cs" />
+    <Compile Include="Models\Canoa\csCanoa.cs" />
+    <Compile Include="Models\Canoa\csEstructuraCanoa.cs" />
+    <Compile Include="Models\Pasta\csEstructuraPasta.cs" />
     <Compile Include="Models\Pizza\csEstructuraPizza.cs" />
-    <Compile Include="Models\Pizza\csPasta.cs" />
+    <Compile Include="Models\Pasta\csPasta.cs" />
     <Compile Include="Models\Pizza\csPizza.cs" />
+    <Compile Include="Models\Quesadilla\csEstructuraQuesadilla.cs" />
+    <Compile Include="Models\Quesadilla\csQuesadilla.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

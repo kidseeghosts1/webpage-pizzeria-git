@@ -5,15 +5,15 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-using static pecasPizzaApi.Models.Pizza.csEstructuraPasta;
+using static pecasPizzaApi.Models.Canoa.csEstructuraCanoa;
 
-namespace pecasPizzaApi.Models.Pizza
+namespace pecasPizzaApi.Models.Canoa
 {
-    public class csPasta
+    public class csCanoa
     {
-        public responsePasta insertarPasta(int id_pasta, string nombre_pasta, string descp_pasta, double precio)
+        public responseCanoa insertarCanoa(int id_canoas, string nombre_canoa, string descp_canoa, double precio)
         {
-            responsePasta resultado = new responsePasta();
+            responseCanoa resultado = new responseCanoa();
             string conexion = "";
             SqlConnection con = null;
 
@@ -23,8 +23,7 @@ namespace pecasPizzaApi.Models.Pizza
                 con = new SqlConnection(conexion);
                 con.Open();
 
-                string cadena = "INSERT INTO Pasta(nombre_pasta, descp_pasta, precio) VALUES ('" + nombre_pasta + "', '" + descp_pasta + "', " + precio + " ) ";
-
+                string cadena = "INSERT INTO Canoa(nombre_canoa, descp_canoa, precio) VALUES ('" + nombre_canoa + "', '" + descp_canoa + "', " + precio + ") ";
                 SqlCommand cmd = new SqlCommand(cadena, con);
                 resultado.respuesta = cmd.ExecuteNonQuery();
                 resultado.descripcion_respuesta = "Operación realizada exitosamente";
@@ -32,16 +31,14 @@ namespace pecasPizzaApi.Models.Pizza
             catch (Exception ex)
             {
                 resultado.respuesta = 0;
-                resultado.descripcion_respuesta = "Ocurrió un problema al realizar la operación, descripción de la respuesta: " + ex.Message.ToString();
+                resultado.descripcion_respuesta = "Ocurrió un error al realizar la operación. Descripción del error: " + ex.Message.ToString();
             }
-
             con.Close();
             return resultado;
-
         }
-        public responsePasta actualizarPasta(int id_pasta, string nombre_pasta, string descp_pasta, double precio)
+        public responseCanoa actualizarCanoa(int id_canoas, string nombre_canoa, string descp_canoa, double precio)
         {
-            responsePasta resultado = new responsePasta();
+            responseCanoa resultado = new responseCanoa();
             string conexion = "";
             SqlConnection con = null;
 
@@ -51,7 +48,7 @@ namespace pecasPizzaApi.Models.Pizza
                 con = new SqlConnection(conexion);
                 con.Open();
 
-                string cadena = "UPDATE Pasta SET nombre_pasta= '" + nombre_pasta + "', descp_pasta= '" + descp_pasta + "', precio= " + precio + " WHERE id_pasta= " + id_pasta + " ";
+                string cadena = "UPDATE Canoa SET nombre_canoa='" + nombre_canoa + "', descp_canoa='" + descp_canoa + "', precio=" + precio + " WHERE id_canoas=" + id_canoas + " ";
                 SqlCommand cmd = new SqlCommand(cadena, con);
                 resultado.respuesta = cmd.ExecuteNonQuery();
                 resultado.descripcion_respuesta = "Operación realizada exitosamente";
@@ -59,15 +56,14 @@ namespace pecasPizzaApi.Models.Pizza
             catch (Exception ex)
             {
                 resultado.respuesta = 0;
-                resultado.descripcion_respuesta = "Ocurrió un problema al realizar la operación, descripcion de la respuesta: " + ex.Message.ToString();
+                resultado.descripcion_respuesta = "Ocurrió un error al realizar la operación. Descripción del error: " + ex.Message.ToString();
             }
-
             con.Close();
             return resultado;
         }
-        public responsePasta eliminarPasta(int id_pasta)
+        public responseCanoa eliminarCanoa(int id_canoas)
         {
-            responsePasta resultado = new responsePasta();
+            responseCanoa resultado = new responseCanoa();
             string conexion = "";
             SqlConnection con = null;
 
@@ -77,7 +73,7 @@ namespace pecasPizzaApi.Models.Pizza
                 con = new SqlConnection(conexion);
                 con.Open();
 
-                string cadena = "DELETE FROM ¨Pasta WHERE id_pasta= '" + id_pasta + "' ";
+                string cadena = "DELETE FROM Canoa WHERE id_canoas=" + id_canoas + " ";
                 SqlCommand cmd = new SqlCommand(cadena, con);
                 resultado.respuesta = cmd.ExecuteNonQuery();
                 resultado.descripcion_respuesta = "Operación realizada exitosamente";
@@ -85,36 +81,12 @@ namespace pecasPizzaApi.Models.Pizza
             catch (Exception ex)
             {
                 resultado.respuesta = 0;
-                resultado.descripcion_respuesta = "Ocurrio un problema al realizar la operación, descripción de la respuesta: " + ex.Message.ToString();
+                resultado.descripcion_respuesta = "Ocurrió un error al realizar la operación. Descripción del error: " + ex.Message.ToString();
             }
-
             con.Close();
             return resultado;
         }
-        public DataSet listarPastas()
-        {
-            DataSet dsi = new DataSet();                
-            string conexion = ConfigurationManager.ConnectionStrings["cnConnection"].ConnectionString;
-            SqlConnection con = new SqlConnection(conexion);
-            con.Open();
-
-            try
-            {
-                string cadena = "SELECT * FROM Pasta";
-                SqlCommand cmd = new SqlCommand(cadena, con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dsi);
-                dsi.Tables[0].TableName = "Listado de todas las pastas disponibles";
-                return dsi;
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-
-            con.Close();
-        }
-        public DataSet listarPastaXid(int id_pasta)
+        public DataSet listarCanoas()
         {
             DataSet dsi = new DataSet();
             string conexion = ConfigurationManager.ConnectionStrings["cnConnection"].ConnectionString;
@@ -123,11 +95,11 @@ namespace pecasPizzaApi.Models.Pizza
 
             try
             {
-                string cadena = "SELECT * FROM Pasta WHERE id_pasta= '" + id_pasta + "' ";
+                string cadena = "SELECT * FROM Canoa";
                 SqlCommand cmd = new SqlCommand(cadena, con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsi);
-                dsi.Tables[0].TableName = "Listado de la pasta con id: '" + id_pasta + "' ";
+                dsi.Tables[0].TableName = "Listado de todas las canoas disponibles";
                 return dsi;
             }
             catch (Exception ex)
@@ -136,7 +108,29 @@ namespace pecasPizzaApi.Models.Pizza
             }
 
             con.Close();
+        }
+        public DataSet listarCanoasXId(int id_canoas)
+        {
+            DataSet dsi = new DataSet();
+            string conexion = ConfigurationManager.ConnectionStrings["cnConnection"].ConnectionString;
+            SqlConnection con = new SqlConnection(conexion);
+            con.Open();
 
+            try
+            {
+                string cadena = "SELECT * FROM Canoa WHERE id_canoas=" + id_canoas + " ";
+                SqlCommand cmd = new SqlCommand(cadena, con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsi);
+                dsi.Tables[0].TableName = "Listado de la canoa con ID: " + id_canoas;
+                return dsi;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+            con.Close();
         }
     }
 }
