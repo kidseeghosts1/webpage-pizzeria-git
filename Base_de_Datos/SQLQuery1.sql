@@ -50,5 +50,5 @@ descp_piola VARCHAR(250),
 precio DECIMAL(10, 2)
 )
 
-SELECT * FROM Quesadilla;
+SELECT * FROM Piola;
 
