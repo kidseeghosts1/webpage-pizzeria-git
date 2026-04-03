@@ -4,7 +4,7 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;   
+    box-sizing: border-box;
 }
 
 html, body{
@@ -129,7 +129,7 @@ header .titulos-carrusel{
     justify-content: space-between;
     align-items: center;
     padding: 0 5em 0 5em;
-    margin: .5em 0 -1.5em 0;   
+    margin: .5em 0 -1.5em 0;
 }
 
 .titulos-carrusel h1{
@@ -137,6 +137,7 @@ header .titulos-carrusel{
     font-weight: 400;
     font-style: normal;
     font-size: 2.5em;
+    height: 49.4px;
 }
 
 .titulos-carrusel h2{
@@ -144,7 +145,8 @@ header .titulos-carrusel{
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 2em;
+    font-size: 2.5em;
+    height: 49.4px;
     align-self: flex-end;
 }
 
@@ -247,7 +249,7 @@ main .container-cards-menu{
     font-style: normal;
     text-transform: capitalize;
     color: #ffff;
-} 
+}
 
 .card-producto .desc-producto{
     font-size: 35px;
@@ -343,4 +345,94 @@ footer .container-footer .right p{
     font-weight: 300;
     font-style: normal;
     font-size: smaller;
+}
+/* MEDIA QUERIES */
+/* Estilos para cuando el tamaño del viewport sea igual o menor que 1024px */
+@media screen and (max-width: 1024px){
+    /* Estilos para el Nav-Bar */
+    .header-navbar .up-navbar {
+        height: 55px;
+    }
+    .header-navbar .navbar-container .up-navbar ul li a {
+        font-size: 90%;
+    }
+    .header-navbar .navbar-container .up-navbar:nth-child(1) img {
+        width: 95px;
+        height: 95px;
+    }
+    .header-navbar .navbar-container .down-navbar input[type="search"] {
+        width: 35em;
+        height: 1.8em;
+    }
+    .header-navbar .navbar-container .down-navbar button[type="submit"] i{
+        font-size: 17px;
+    }
+    /* Estilos para los titulos del Header */
+    .titulos-carrusel {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .titulos-carrusel h1 {
+        font-size: 33px;
+    }
+    .titulos-carrusel h2 {
+        font-size: 27px;
+    }
+    /* Estilos para el Footer */
+    footer {
+        padding: 28px 0;
+    }
+    footer .left .inside1 p {
+        font-size: 30px;
+    }
+    footer .left .inside2 {
+        font-size: 0.7em;
+    }
+    footer .right {
+        font-size: 84%;
+    }
+}
+/* Estilos para cuando el tamaño del viewport se encuentre entre 878px y 692px */
+@media screen and (min-width: 692px) and (max-width: 878px) {
+    /* Estilos para el Nav-Bar */
+    .header-navbar .navbar-container .up-navbar ul li a {
+        font-size: 58%;
+    }
+    .header-navbar .navbar-container .up-navbar ul li {
+        padding: 0px;
+    }
+    .header-navbar .navbar-container .up-navbar:nth-child(1) img {
+        width: 75px;
+        height: 80px;
+    }
+    .header-navbar .up-navbar {
+        height: 42px;
+    }
+    .header-navbar .navbar-container .down-navbar input[type="search"] {
+        width: 25em;
+        height: 1.3em;
+    }
+    .header-navbar .navbar-container .down-navbar button[type="submit"] i {
+        font-size: 15px;
+    }
+    /* Estilos para los titulos del Header */
+    .titulos-carrusel {
+        width: 100%;
+        justify-content: center;
+    }
+    .titulos-carrusel h1 {
+        font-size: 23px;
+        width: 100%;
+        height: 0px;
+        text-align: left;
+        background-color: #B38F6F;
+    }
+    .titulos-carrusel h2 {
+        font-size: 16px;
+        width: 100%;
+        height: 1.3em;
+        align-self: self-end;
+        text-align: right;
+    }
 }
